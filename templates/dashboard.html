@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: #EDFFFD;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+.header {
+  background-color: #20D0CE;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+.header h1 {
+  margin: 0;
+}
+.dashboard {
+  display: flex;
+  gap: 20px;
+}
+.dashboard-item {
+  flex: 1;
+  background-color: #125873;
+  height: 300px;
+  width: 476px;
+
+  border-radius: 25px;
+  padding: 5px;
+}
+.footer {
+  text-align: center;
+  font-family:Inter;
+  font-size:20px;
+  padding: 50px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1 style="font-family:Inter;
+    font-size:50px;
+    color:#EDFFFD;
+    text-align:left;
+    ">DASHBOARD</h1>
+    <i class="fa fa-refresh" aria-hidden="true"></i>
+  </div>
+  <br>
+  <div class="dashboard">
+    <div class="dashboard-item">
+        <p style="font-family:Inter;
+    font-size:25px;
+    color:#EDFFFD;
+    text-align:left;
+    padding-left:20px"><strong>Heart Rate:</strong> {{ data.heart_rate }} bpm</p>
+    </div>
+    <div class="dashboard-item">
+        <p style="font-family:Inter;
+        font-size:25px;
+        color:#EDFFFD;
+        text-align:left;
+        padding-left:20px"><strong>Blood Pressure:</strong> {{ data.blood_pressure }}</p>
+    </div>
+  </div>
+  <br>
+  <div class="dashboard">
+    <div class="dashboard-item">
+        <p style="font-family:Inter;
+        font-size:25px;
+        color:#EDFFFD;
+        text-align:left;
+        padding-left:20px"><strong>Oxygen Saturation:</strong> {{ data.oxygen}} %</p>
+    </div>
+    <div class="dashboard-item">
+        <p style="font-family:Inter;
+        font-size:25px;
+        color:#EDFFFD;
+        text-align:left;
+        padding-left:20px"><strong>Temperature:</strong> {{ data.temprature}} °C</p>
+    </div>
+  </div>
+  <div class="footer">
+    <p><strong>Last Updated :</strong> {{ data.time}}</p> 
+  </div>
+</div>
+<script>
+    setInterval(function() {
+        location.reload();
+    }, 100000);  // Refresh every 5 seconds
+</script>
+</body>
+</html>
